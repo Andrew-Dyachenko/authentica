@@ -1,0 +1,10 @@
+{
+	"name": "authentica",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "parcel index.html",
+		"scss-fix": "./node_modules/stylelint/bin/stylelint.js --config ./.stylelintrc.yml --fix ./**/*.scss"
+	}
+}
