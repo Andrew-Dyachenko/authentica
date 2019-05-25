@@ -1,0 +1,38 @@
+@import './conf/configs';
+@import '~sassy-normalize/normalize';
+@import './fonts';
+
+@import './header';
+
+%visibility-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+%container {
+	padding: 0 $global-padding;
+}
+
+:root {
+	font-size: $font-size-root;
+	height: 100%;
+}
+
+body {
+	background-color: $body-bg;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-family-base;
+	min-height: 100%;
+}
+
+.container {
+	@extend %container;
+}

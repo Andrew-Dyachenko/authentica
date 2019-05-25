@@ -1,0 +1,5 @@
+@import '../util/strip-unit';
+
+@function fluid($min, $max, $wmin, $wmax) {
+	@return calc(#{$max} + (#{strip-unit($max - $min)}) * ((100vw - #{$wmax}) / #{strip-unit($wmax - $wmin)}));
+}

@@ -1,0 +1,15 @@
+.header {
+	display: grid;
+	grid-column-gap: $gutter-width;
+	grid-template-areas: 'logo info';
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+
+	&__logo {
+		grid-area: logo;
+	}
+
+	&__info {
+		grid-area: info;
+	}
+}
