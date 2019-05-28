@@ -6,12 +6,12 @@
 		position: relative;
 
 		&:link {
-			color: $black-russian;
+			color: $black;
 			display: block;
 			text-decoration: none;
 
 			&:visited {
-				color: $black-russian;
+				color: $black;
 			}
 		}
 	}

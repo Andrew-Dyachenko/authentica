@@ -3,11 +3,49 @@
 	display: grid;
 	grid-auto-flow: column dense;
 	grid-column-gap: $gutter-width;
-	grid-template-areas: 'phones customer';
+	grid-template-areas: 'phones dwarf-menu profile customer';
 	grid-template-columns: repeat(2, auto);
 
 	&__phones {
 		grid-area: phones;
+	}
+
+	&__dwarf-menu {
+		grid-area: dwarf-menu;
+	}
+
+	&__profile {
+		$panel-profile: &;
+		grid-area: profile;
+
+		.btn {
+			&#{$panel-profile}-toggle {
+				align-items: center;
+				cursor: pointer;
+				display: flex;
+				line-height: 1;
+				padding: 0;
+
+				&::after {
+					border-bottom-color: $black;
+					border-top-color: $black;
+					border-width: (7.68 / 14) + em (4.5 / 14) + em;
+				}
+
+				&:hover,
+				&:focus {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.text-crop {
+			@include text-crop($line-height: 1);
+			color: $black;
+			display: inline-block;
+			font-size: (14 / 15) + rem;
+			font-weight: 300;
+		}
 	}
 
 	&__customer {

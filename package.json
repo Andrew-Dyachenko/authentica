@@ -10,6 +10,9 @@
 		"js-fix": "./node_modules/eslint/bin/eslint.js --config ./.eslintrc.yml --fix ./**/*.js --ignore-path .gitignore"
 	},
 	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"jquery": "^3.4.1",
+		"popper.js": "^1.15.0",
 		"sassy-normalize": "^8.0.4",
 		"svgxuse": "^1.2.6"
 	},

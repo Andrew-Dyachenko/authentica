@@ -1,0 +1,38 @@
+.dwarf-menu {
+	&__item {
+		align-items: center;
+		color: $black;
+		display: grid;
+		font-size: (14 / 15) + rem;
+		grid-auto-flow: column;
+		grid-column-gap: $gutter-width / 4;
+		grid-template-areas: 'dwarf-menu__text dwarf-menu__icon';
+		grid-template-columns: repeat(2, auto);
+		text-decoration: none;
+
+		&:visited {
+			color: $black;
+			text-decoration: none;
+		}
+	}
+
+	&__text {
+		color: $black;
+		font-size: 1em;
+		font-weight: 300;
+		grid-area: dwarf-menu__text;
+		overflow: hidden;
+		white-space: nowrap;
+
+		&-crop {
+			@include text-crop($line-height: 1);
+			display: inline-block;
+			font-size: 1em;
+			vertical-align: middle;
+		}
+	}
+
+	&__icon {
+		grid-area: dwarf-menu__icon;
+	}
+}

@@ -11,6 +11,17 @@
 @import './panel';
 @import './phones';
 @import './customer';
+@import './dwarf-menu';
+
+/* stylelint-disable scss/at-import-no-partial-leading-underscore */
+
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_mixins';
+@import '~bootstrap/scss/_buttons';
+@import '~bootstrap/scss/_dropdown';
+
+/* stylelint-enable scss/at-import-no-partial-leading-underscore */
 
 %visibility-hidden {
 	border: 0;
@@ -44,8 +55,18 @@
 body {
 	background-color: $body-bg;
 	min-height: 100%;
+	overflow-x: hidden;
 }
 
 .container {
 	@extend %container;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
 }
