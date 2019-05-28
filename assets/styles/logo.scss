@@ -1,20 +1,29 @@
 .logo {
+	display: grid;
+	font-size: (35 / strip-unit($font-size-root) + rem);
+	grid-auto-flow: row;
+	grid-row-gap: (8 / 35) + em;
+	grid-template-areas:
+		'logo__word--black'
+		'logo__word--pink';
+	grid-template-rows: repeat(2, max-content);
+	letter-spacing: (.33333333 / 35) + rem;
+
 	&__word {
-		font-size: (35 / strip-unit($font-size-root) + em);
+		@include text-crop($line-height: 1);
 		font-weight: 300;
-		letter-spacing: (.33333333 / 35) + em;
-		line-height: (31 / 35);
 
 		&--black {
 			color: $black-russian;
+			grid-area: logo__word--black;
 		}
 
 		&--pink {
 			color: $radical-red;
+			grid-area: logo__word--pink;
 		}
 	}
 	&:link {
-		display: block;
 		text-decoration: none;
 	}
 }
