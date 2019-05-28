@@ -1,8 +1,16 @@
+@import './func/functions';
+@import './mix/mixins';
+@import './anim/animations';
+
 @import './conf/configs';
 @import '~sassy-normalize/normalize';
-@import './fonts';
+@import './icon';
 
 @import './header';
+@import './logo';
+@import './panel';
+@import './phones';
+@import './customer';
 
 %visibility-hidden {
 	border: 0;
@@ -17,19 +25,23 @@
 }
 
 %container {
+	margin: 0 auto;
+	max-width: $container-max-width;
 	padding: 0 $global-padding;
 }
 
 :root {
+	font-family: $font-family-base;
 	font-size: $font-size-root;
 	height: 100%;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: $body-bg;
-	display: flex;
-	flex-direction: column;
-	font-family: $font-family-base;
 	min-height: 100%;
 }
 

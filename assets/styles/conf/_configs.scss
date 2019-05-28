@@ -1,16 +1,38 @@
-@import '../func/number';
-@import '../func/string';
-
 $white: #fff;
+$black-russian: #000106;
+$radical-red: #fe4a5b;
+$dusty-gray: #989797;
+$alto: #e0e0e0;
+
 $body-bg: $white;
-$global-margin: 15px;
-$global-padding: 15px;
-$gutter-width: 15px;
+$global-margin: 20px;
+$global-padding: 20px;
+$gutter-width: 20px;
 $font-size-root: 15px;
-$font-family-base: 'PF Agora Sans Pro', sans-serif;
+$global-line-height: 23 / 15;
+$font-base: 'PF Agora Sans Pro';
+$font-family-base: $font-base, sans-serif;
+
+$xxxs: 0;
+$xxs:  320px;
+$xs:   480px;
+$s:    600px;
+$m:    768px;
+$l:    1000px;
+$xl:   1280px;
+$xxl:  1600px;
+$xxxl: 1920px;
+
+$container-max-width: $l + $global-padding * 2;
+
+// -----------------
 
 :root {
 	--white: $white;
+	--black-russian: $black-russian;
+	--radical-red: $radical-red;
+	--dusty-gray: $dusty-gray;
+	--alto: $alto;
 }
 
 // ---------- Asymptotic Fibonacci numbers  ----------

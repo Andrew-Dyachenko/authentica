@@ -1,0 +1,20 @@
+.logo {
+	&__word {
+		font-size: (35 / strip-unit($font-size-root) + em);
+		font-weight: 300;
+		letter-spacing: (.33333333 / 35) + em;
+		line-height: (31 / 35);
+
+		&--black {
+			color: $black-russian;
+		}
+
+		&--pink {
+			color: $radical-red;
+		}
+	}
+	&:link {
+		display: block;
+		text-decoration: none;
+	}
+}

@@ -10,14 +10,16 @@
 		"js-fix": "./node_modules/eslint/bin/eslint.js --config ./.eslintrc.yml --fix ./**/*.js --ignore-path .gitignore"
 	},
 	"dependencies": {
-		"sassy-normalize": "^8.0.4"
+		"sassy-normalize": "^8.0.4",
+		"svgxuse": "^1.2.6"
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.5.1",
 		"eslint": "^5.16.0",
 		"parcel-bundler": "^1.12.3",
+		"parcel-plugin-svg-sprite": "^1.1.2",
 		"postcss-modules": "^1.4.1",
-		"posthtml-postcss-modules": "^0.1.5",
+		"posthtml": "^0.11.4",
 		"sass": "^1.20.1",
 		"stylelint": "^10.0.1",
 		"stylelint-config-sass-guidelines": "^6.0.0",

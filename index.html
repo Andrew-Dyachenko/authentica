@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Блог</title>
-	<link rel="stylesheet" href="./assets/styles/index.scss">
-</head>
-<body>
-	<div class="container container--header">
-		<header class="header">
-			<div class="header__logo">
-				Logo
-			</div>
-			<div class="header__info">
-				Info
-			</div>
-		</header>
-	</div>
-</body>
+	<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Блог</title>
+		<link rel="stylesheet" href="./assets/styles/index.scss">
+		<script defer src="./node_modules/svgxuse/svgxuse.js"></script>
+	</head>
+	<body>
+		<div class="container container--header">
+			<header class="header">
+				<div class="header__logo">
+					<a href="/" class="logo">
+						<div class="logo__word logo__word--black">authentica</div>
+						<div class="logo__word logo__word--pink">love</div>
+					</a>
+				</div>
+				<div class="header__panel">
+					<div class="panel">
+						<ul class="phones panel__phones">
+							<li class="phones__item">
+								<a href="tel:+78001002849" class="phones__link">(800) 100 28 49</a>
+							</li>
+							<!-- <li class="phones__item">
+								<a href="tel:+78001002849" class="phones__link">(800) 100 28 49</a>
+							</li> -->
+						</ul>
+						<div class="customer panel__customer">
+							<a href="#" class="customer__basket">
+								<svg class="icon icon-basket customer__icon">
+									<use xlink:href="./assets/images/symbol-defs.svg#icon-basket"/>
+								</svg>
+								<div class="customer__badge" title="В корзине: 123456789 товаров ">
+									<div class="customer__badge-overflow">
+										123456789
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+	</body>
 </html>

@@ -1,0 +1,15 @@
+.panel {
+	align-items: center;
+	display: grid;
+	grid-auto-flow: column dense;
+	grid-column-gap: $gutter-width;
+	grid-template-areas: 'phones customer';
+
+	&__phones {
+		grid-area: phones;
+	}
+
+	&__customer {
+		grid-area: customer;
+	}
+}

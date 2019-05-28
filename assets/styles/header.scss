@@ -1,15 +1,24 @@
 .header {
+	border-bottom: 1px solid $alto;
 	display: grid;
+	grid-auto-flow: column dense;
 	grid-column-gap: $gutter-width;
-	grid-template-areas: 'logo info';
-	grid-template-columns: 1fr 1fr;
-	width: 100%;
+	grid-template-areas: 'logo panel';
+	grid-template-columns: max-content 1fr;
+	padding: $global-padding / 4 * 3 0 $global-padding / 2;
 
 	&__logo {
+		align-items: center;
+		display: flex;
 		grid-area: logo;
+		width: max-content;
 	}
 
-	&__info {
-		grid-area: info;
+	&__panel {
+		align-items: flex-start;
+		display: flex;
+		grid-area: panel;
+		justify-content: flex-end;
+		padding-top: $global-padding / 2;
 	}
 }
