@@ -5,6 +5,7 @@
 	grid-column-gap: $gutter-width;
 	grid-template-areas: 'phones dwarf-menu profile customer';
 	grid-template-columns: repeat(2, auto);
+	line-height: 1;
 
 	&__phones {
 		grid-area: phones;
