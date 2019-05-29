@@ -17,6 +17,7 @@
 	}
 
 	&__icon {
+		color: $black;
 		font-size: (19 / strip-unit($font-size-root)) + rem;
 		letter-spacing: normal;
 		line-height: 1;
@@ -31,7 +32,6 @@
 		letter-spacing: normal;
 		min-height: 1.25em;
 		min-width: 1.25em;
-		// padding: (1 / strip-unit($font-size-root) * 2 + rem) 0 (1 / strip-unit($font-size-root) + rem);
 		padding: .125em .25em 0;
 		position: absolute;
 		right: 0;

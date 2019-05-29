@@ -6,13 +6,6 @@
 @import '~sassy-normalize/normalize';
 @import './icon';
 
-@import './header';
-@import './logo';
-@import './panel';
-@import './phones';
-@import './customer';
-@import './dwarf-menu';
-
 /* stylelint-disable scss/at-import-no-partial-leading-underscore */
 
 @import '~bootstrap/scss/_functions';
@@ -22,6 +15,14 @@
 @import '~bootstrap/scss/_dropdown';
 
 /* stylelint-enable scss/at-import-no-partial-leading-underscore */
+
+@import './panel';
+@import './header';
+@import './logo';
+@import './phones';
+@import './customer';
+@import './dwarf-menu';
+@import './dropdown';
 
 %visibility-hidden {
 	border: 0;
@@ -60,6 +61,16 @@ body {
 
 .container {
 	@extend %container;
+}
+
+.menu-toggle {
+	align-items: center;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	padding: 0;
 }
 
 h1,

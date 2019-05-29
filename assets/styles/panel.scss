@@ -4,7 +4,7 @@
 	grid-auto-flow: column dense;
 	grid-column-gap: $gutter-width;
 	grid-template-areas: 'phones dwarf-menu profile customer';
-	grid-template-columns: repeat(2, auto);
+	grid-template-columns: repeat(4, auto);
 	line-height: 1;
 
 	&__phones {
@@ -12,11 +12,15 @@
 	}
 
 	&__dwarf-menu {
+		align-items: center;
+		display: flex;
 		grid-area: dwarf-menu;
 	}
 
 	&__profile {
 		$panel-profile: &;
+		align-items: center;
+		display: flex;
 		grid-area: profile;
 
 		.btn {

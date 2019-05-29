@@ -12,20 +12,27 @@
 	<body>
 		<div class="container container--header">
 			<header class="header">
-				<div class="header__logo">
-					<a href="/" class="logo">
+				<div class="header__toggle">
+					<button class="menu-toggle">
+						<svg class="icon icon-burger menu-toggle_icon">
+							<use xlink:href="./assets/images/symbol-defs.svg#icon-burger"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="header__brand">
+					<a href="/" class="logo header__logo">
 						<div class="logo__word logo__word--black">authentica</div>
 						<div class="logo__word logo__word--pink">love</div>
 					</a>
 				</div>
-				<div class="header__panel">
-					<div class="panel">
-						<ul class="phones panel__phones">
+				<div class="header__desk">
+					<div class="panel header__panel">
+						<ul class="phones panel__item panel__phones header__phones">
 							<li class="phones__item">
 								<a href="tel:+78001002849" class="phones__link">(800) 100 28 49</a>
 							</li>
 						</ul>
-						<div class="panel__menu">
+						<div class="phones panel__item panel__dwarf-menu header__dwarf-menu">
 							<nav class="dwarf-menu">
 								<a href="#" class="dwarf-menu__item">
 									<span class="dwarf-menu__text">
@@ -33,28 +40,28 @@
 											ДЛЯ ВАС
 										</span>
 									</span>
-									<svg class="icon icon-heart dwarf-menu__icon">
+									<svg class="icon icon-heart dwarf-menu__icon dwarf-menu__icon--heart">
 										<use xlink:href="./assets/images/symbol-defs.svg#icon-heart"></use>
 									</svg>
 								</a>
 							</nav>
 						</div>
-						<div class="panel__profile">
+						<div class="phones panel__item panel__profile header__profile">
 							<div class="dropdown">
 								<button class="btn btn-link dropdown-toggle panel__profile-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span class="text-crop">ВЯЧЕСЛАВ</span>
 								</button>
 								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-									<h6 class="dropdown-header">Dropdown header</h6>
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									<a class="dropdown-item" href="#">Something else here</a>
+									<h6 class="dropdown-header">Панель пользователя</h6>
+									<a class="dropdown-item" href="#">История покупок</a>
+									<a class="dropdown-item" href="#">Кошелёк</a>
+									<a class="dropdown-item" href="#">Сообщения</a>
 									<div class="dropdown-divider"></div>
-  									<a class="dropdown-item" href="#">Separated link</a>
+  									<a class="dropdown-item" href="#">Выход</a>
 								</div>
 							</div>
 						</div>
-						<div class="customer panel__customer">
+						<div class="customer phones panel__item panel__customer header__customer">
 							<a href="#" class="customer__basket">
 								<svg class="icon icon-basket customer__icon">
 									<use xlink:href="./assets/images/symbol-defs.svg#icon-basket"/>

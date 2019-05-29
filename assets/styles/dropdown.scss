@@ -1,0 +1,20 @@
+.dropdown {
+	&.show {
+		.dropdown-toggle {
+			&::after {
+				border-bottom: .5485714286em solid $black;
+				border-top-width: 0;
+			}
+		}
+	}
+
+	&-header {
+		padding: .5em 1em;
+	}
+
+	&-item {
+		font-size: $font-size-root;
+		padding: .5em 1em;
+		text-decoration: none;
+	}
+}
