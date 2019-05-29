@@ -5,7 +5,7 @@
 	grid-column-gap: $gutter-width;
 	grid-template-areas: 'toggle brand desk';
 	grid-template-columns: max-content max-content 1fr;
-	padding: 17px 0 14px;
+	padding: 15px 0;
 
 	&__toggle {
 		align-items: center;
@@ -22,11 +22,10 @@
 	}
 
 	&__desk {
-		align-items: flex-start;
+		align-items: center;
 		display: flex;
 		grid-area: desk;
 		justify-content: flex-end;
-		padding-top: $global-padding / 2;
 	}
 
 	&__panel {

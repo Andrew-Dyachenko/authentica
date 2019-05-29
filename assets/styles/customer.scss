@@ -14,10 +14,15 @@
 				color: $black;
 			}
 		}
+
+		&:hover,
+		&:active {
+			color: $radical-red;
+		}
 	}
 
 	&__icon {
-		color: $black;
+		color: inherit;
 		font-size: (19 / strip-unit($font-size-root)) + rem;
 		letter-spacing: normal;
 		line-height: 1;

@@ -14,21 +14,25 @@
 			color: $black;
 			text-decoration: none;
 		}
+
+		&:hover,
+		&:active {
+			color: $radical-red;
+		}
 	}
 
 	&__text {
-		color: $black;
+		align-self: center;
+		color: inherit;
 		font-size: 1em;
 		font-weight: 300;
 		grid-area: dwarf-menu__text;
-		overflow: hidden;
 		white-space: nowrap;
 
 		&-crop {
 			@include text-crop($line-height: 1);
-			display: inline-block;
+			display: block;
 			font-size: 1em;
-			vertical-align: middle;
 		}
 	}
 
@@ -36,7 +40,9 @@
 		grid-area: dwarf-menu__icon;
 
 		&--heart {
+			align-self: center;
 			color: $radical-red;
+			font-size: (9 / 15) + rem;
 		}
 	}
 }
