@@ -1,0 +1,17 @@
+%visibility-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+%container {
+	margin: 0 auto;
+	max-width: $container-max-width;
+	padding: 0 $global-padding;
+}

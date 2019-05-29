@@ -16,6 +16,9 @@
 
 /* stylelint-enable scss/at-import-no-partial-leading-underscore */
 
+@import './reboot';
+@import './prototypes';
+@import './container';
 @import './panel';
 @import './header';
 @import './logo';
@@ -23,61 +26,20 @@
 @import './customer';
 @import './dwarf-menu';
 @import './dropdown';
-
-%visibility-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-}
-
-%container {
-	margin: 0 auto;
-	max-width: $container-max-width;
-	padding: 0 $global-padding;
-}
-
-:root {
-	font-family: $font-family-base;
-	font-size: $font-size-root;
-	height: 100%;
-	line-height: $global-line-height;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	background-color: $body-bg;
-	min-height: 100%;
-	overflow-x: hidden;
-}
-
-.container {
-	@extend %container;
-}
+@import './menu';
 
 .menu-toggle {
+	@include text-crop($line-height: 1);
 	align-items: center;
 	background: none;
 	border: 0;
 	cursor: pointer;
 	display: flex;
+	font-size: $font-size-root;
 	justify-content: center;
 	padding: 0;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-top: 0;
+	&__icon {
+		height: (10 / 15) + em;
+	}
 }
