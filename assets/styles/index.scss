@@ -27,6 +27,7 @@
 @import './dwarf-menu';
 @import './dropdown';
 @import './menu';
+@import './footer';
 
 .menu-toggle {
 	@include text-crop($line-height: 1);

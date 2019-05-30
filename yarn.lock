@@ -2769,6 +2769,11 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.0.tgz#55122b6536ea496b4b44893ee2608141d10d9916"
   integrity sha512-R+H8IZclI8AAkSBRQJLVOsxwAoHd6WC40b4QTNWIjzAa6BXOBfQcM587MXDTVPeYaopFNWHUFLx7eNmHDSxMWg==
 
+flexbox@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/flexbox/-/flexbox-0.0.3.tgz#b4d03395734a19dba566ba02752c95b603c44cf7"
+  integrity sha1-tNAzlXNKGdulZroCdSyVtgPETPc=
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

@@ -25,4 +25,8 @@
 	&--footer {
 		justify-self: flex-end;
 	}
+
+	&--main {
+		flex-grow: 1;
+	}
 }

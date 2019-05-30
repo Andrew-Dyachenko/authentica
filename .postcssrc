@@ -3,7 +3,7 @@
 	"plugins": {
 		"autoprefixer": {
 			"grid": "autoplace",
-			"flex": true,
+			"flexbox": true,
 			"cascade": false
 		}
 	}
