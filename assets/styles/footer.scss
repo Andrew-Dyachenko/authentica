@@ -167,9 +167,10 @@
 			'footer__logo   footer__links-group footer__address footer__phones    footer__payments'
 			'footer__logo   footer__links-group footer__address .                 .'
 			'footer__logo   footer__links-group footer__address footer__subscribe footer__subscribe'
+			'.              .                   .               footer__subscribe footer__subscribe'
 			'footer__rights footer__rights      footer__rights  footer__subscribe footer__subscribe';
 		grid-template-columns: repeat(5, max-content);
-		grid-template-rows: max-content $gutter-width max-content $gutter-width / 4 1fr max-content;
+		grid-template-rows: max-content $gutter-width max-content $gutter-width / 4 1fr $gutter-width / 2 max-content;
 		padding: $max-padding-vertical 0;
 	}
 }
