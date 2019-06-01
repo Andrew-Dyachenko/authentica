@@ -4,6 +4,25 @@ $black-russian: #000106;
 $radical-red: #fe4a5b;
 $dusty-gray: #989797;
 $alto: #e0e0e0;
+$chicago: #575756;
+$emperor: #525151;
+$sandal: #a68e6f;
+$mongoose: #b3a087;
+$swirl: #d3ccc2;
+
+:root {
+	--white: #{$white};
+	--black: #{$black};
+	--black-russian: #{$black-russian};
+	--radical-red: #{$radical-red};
+	--dusty-gray: #{$dusty-gray};
+	--alto: #{$alto};
+	--chicago: #{$chicago};
+	--emperor: #{$emperor};
+	--sandal: #{$sandal};
+	--mongoose: #{$mongoose};
+	--swirl: #{$swirl};
+}
 
 $body-bg: $white;
 $global-margin: 20px;
@@ -15,16 +34,16 @@ $font-base: 'PF Agora Sans Pro';
 $font-family-base: $font-base, sans-serif;
 
 $xxxs: 0;
-$xxs:  320px;
+$xxs:  320px + $global-padding * 2;
 $xs:   480px;
 $s:    600px;
 $m:    768px;
-$l:    1000px;
-$xl:   1280px;
-$xxl:  1600px;
-$xxxl: 1920px;
+$l:    1000px + $global-padding * 2;
+$xl:   1280px - $global-padding * 2;
+$xxl:  1600px - $global-padding * 2;
+$xxxl: 1920px - $global-padding * 2;
 
-$container-max-width: $l + $global-padding * 2;
+$container-max-width: $l;
 
 // ---------- Asymptotic Fibonacci numbers  ----------
 

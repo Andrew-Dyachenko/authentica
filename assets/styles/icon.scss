@@ -1,3 +1,45 @@
+$indigo: #3c58bf;
+$bay-of-many: #293688;
+$selective-yellow: #ffbc00;
+$tree-poppy: #f7981d;
+$gold-drop: #ed7c00;
+$deep-cove: #051244;
+$chateau-green: #4db45e;
+$blaze-orange: #ff5f00;
+$red: #eb001b;
+$tree-poppy: #f79e1b;
+$denim: #1174ce;
+$tory-blue: #0f549d;
+$astronaut-blue: #02375e;
+$jewel: #146643;
+$malachite: #1bcc38;
+$sea-green: #329947;
+$red-ribbon: #e20e37;
+$cardinal: #b41f36;
+$monarch: #720a1e;
+
+:root {
+	--indigo: #{$indigo};
+	--bay-of-many: #{$bay-of-many};
+	--selective-yellow: #{$selective-yellow};
+	--tree-poppy: #{$tree-poppy};
+	--gold-drop: #{$gold-drop};
+	--deep-cove: #{$deep-cove};
+	--chateau-green: #{$chateau-green};
+	--blaze-orange: #{$blaze-orange};
+	--red: #{$red};
+	--tree-poppy: #{$tree-poppy};
+	--denim: #{$denim};
+	--tory-blue: #{$tory-blue};
+	--astronaut-blue: #{$astronaut-blue};
+	--jewel: #{$jewel};
+	--malachite: #{$malachite};
+	--sea-green: #{$sea-green};
+	--red-ribbon: #{$red-ribbon};
+	--cardinal: #{$cardinal};
+	--monarch: #{$monarch};
+}
+
 .icon {
 	display: inline-block;
 	fill: currentColor;
@@ -6,7 +48,27 @@
 	stroke-width: 0;
 	width: 1em;
 
+	&-heart {
+		width: 1.125em;
+	}
+
 	&-basket {
 		width: 1.052734375em;
+	}
+
+	&-mir {
+		width: 3.25em;
+	}
+
+	&-visa {
+		width: 3.25em;
+	}
+
+	&-mastercard {
+		width: 1.2998046875em;
+	}
+
+	&-jcb {
+		width: 1.2998046875em;
 	}
 }

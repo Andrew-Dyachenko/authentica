@@ -10,21 +10,43 @@ import 'bootstrap/js/dist/dropdown'
 const footerToBottom = () => {
 	const bodyContainers = document.querySelectorAll('body > .container');
 	const mainContainer = document.querySelector('.container--main');
+	const f = () => {
+		const totalHeight = Array.from(bodyContainers)
+			.reduce((reduced, container) =>
+				reduced + container.offsetHeight, 0)
 
-	const totalHeight = Array.from(bodyContainers)
-		.reduce((reduced, container) =>
-			reduced + container.offsetHeight, 0)
-
-	mainContainer.style.minHeight = totalHeight < window.innerHeight
-		? `${window.innerHeight - totalHeight}px`
-		: 'auto'
+		mainContainer.style.minHeight = totalHeight < window.innerHeight
+			? `${window.innerHeight - totalHeight}px`
+			: 'auto'
+	}
 
 	window.addEventListener('resize', () => {
 		mainContainer.style.minHeight = null
-		footerToBottom()
+		f()
 	})
+}
+
+const subscribeHandler = e => {
+	e.preventDefault()
+	const form = e.target
+	const input = e.target.elements[0]
+	const submit = e.target.elements[1]
+	const help = form.querySelector('.subscribe__help')
+
+	if (form.checkValidity()) {
+		input.value = null
+		input.setAttribute('disabled', true)
+		submit.setAttribute('disabled', true)
+		help.classList.remove('subscribe__help--error')
+		help.innerText = 'Вы успешно подписаны!'
+	}
+	else {
+		help.classList.add('subscribe__help--error')
+		help.innerText = 'Email введен неверно'
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 	footerToBottom()
+	document.getElementsByName('subscribe-form')[0].onsubmit = subscribeHandler
 })

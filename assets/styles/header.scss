@@ -1,30 +1,32 @@
 .header {
+	$max-grid-column-gap: $gutter-width;
+	$min-grid-column-gap: $gutter-width / 100 * 75;
 	border-bottom: 1px solid $alto;
 	display: grid;
-	grid-auto-flow: column dense;
-	grid-column-gap: $gutter-width;
-	grid-template-areas: 'toggle brand desk';
+	grid-auto-flow: row dense;
+	grid-column-gap: $min-grid-column-gap;
+	grid-template-areas: 'header__toggle header__brand header__desk';
 	grid-template-columns: max-content max-content 1fr;
-	padding: 15px 0;
+	padding: $global-padding / 100 * 75 0;
 
 	&__toggle {
 		align-items: center;
 		display: flex;
-		grid-area: toggle;
+		grid-area: header__toggle;
 		width: max-content;
 	}
 
 	&__brand {
 		align-items: center;
 		display: flex;
-		grid-area: brand;
+		grid-area: header__brand;
 		width: max-content;
 	}
 
 	&__desk {
 		align-items: center;
 		display: flex;
-		grid-area: desk;
+		grid-area: header__desk;
 		justify-content: flex-end;
 	}
 
@@ -57,8 +59,12 @@
 		}
 	}
 
+	@media (min-width: $xxs) {
+		grid-column-gap: fluid($min-grid-column-gap, $max-grid-column-gap, $xxs, $l);
+	}
+
 	@media (min-width: $s) {
-		grid-template-areas: 'brand desk';
+		grid-template-areas: 'header__brand header__desk';
 		grid-template-columns: max-content 1fr;
 
 		&__toggle {
@@ -72,6 +78,10 @@
 			white-space: nowrap;
 			width: 1px;
 		}
+	}
+
+	@media (min-width: $l) {
+		grid-column-gap: $max-grid-column-gap;
 	}
 }
 

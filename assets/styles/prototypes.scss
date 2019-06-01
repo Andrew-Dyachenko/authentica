@@ -15,3 +15,69 @@
 	max-width: $container-max-width;
 	padding: 0 $global-padding;
 }
+
+.button {
+	@include text-crop();
+	background-color: $sandal;
+	border: 1px solid $sandal;
+	color: $white;
+	cursor: pointer;
+	font-size: (14 / 15) + rem;
+	font-weight: 300;
+	height: 43px;
+	padding: 1px $global-padding / 4;
+
+	&:hover,
+	&:active {
+		background-color: $mongoose;
+		border-color: $mongoose;
+	}
+
+	&:disabled {
+		background-color: $swirl;
+		border-color: $swirl;
+		cursor: not-allowed;
+
+		&:hover,
+		&:active {
+			background-color: $swirl;
+			border-color: $swirl;
+		}
+	}
+}
+
+.input {
+	border: 1px solid $dusty-gray;
+	color: $black;
+	font-size: (14 / 15) + rem;
+	height: 43px;
+	line-height: 1;
+	padding: (4 / 14) + em $global-padding / 100 * 75 1px;
+
+	@include placeholder {
+		color: $dusty-gray;
+		font-weight: 300;
+	}
+
+	&:focus,
+	&:active {
+		border-color: $black;
+	}
+
+	&:disabled {
+		background-color: $white;
+		border: 1px solid $alto;
+		color: $alto;
+		cursor: not-allowed;
+
+		@include placeholder {
+			color: $alto;
+		}
+
+		&:focus,
+		&:active {
+			border-color: $alto;
+			color: $alto;
+		}
+	}
+}

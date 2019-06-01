@@ -1,0 +1,71 @@
+.subscribe {
+	display: grid;
+	grid-column-gap: $gutter-width;
+	grid-template-areas:
+		'subscribe__help   subscribe__help'
+		'.                 .'
+		'subscribe__input  subscribe__input'
+		'.                 .'
+		'subscribe__submit subscribe__submit';
+
+	grid-template-rows: max-content $gutter-width / 4 max-content $gutter-width / 100 * 75 max-content;
+
+	&__label {
+		color: $chicago;
+		display: none;
+		font-size: (14 / 15) + rem;
+		grid-area: subscribe__label;
+		margin-bottom: 0;
+	}
+
+	&__input {
+		grid-area: subscribe__input;
+	}
+
+	&__submit {
+		grid-area: subscribe__submit;
+
+		&-text {
+			&--l {
+				display: none;
+			}
+
+			@media (min-width: $s) {
+				&--l {
+					display: inline;
+				}
+
+				&--xxs {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__help {
+		color: $sandal;
+		font-size: (14 / 15) + rem;
+		font-weight: 300;
+		grid-area: subscribe__help;
+		padding-left: $global-padding / 100 * 75;
+
+		&--error {
+			color: $radical-red;
+		}
+	}
+
+	@media (min-width: $s) {
+		grid-template-areas:
+			'subscribe__label  subscribe__label'
+			'.                 .'
+			'subscribe__input  subscribe__submit'
+			'.                 .'
+			'subscribe__help   subscribe__help';
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: max-content $gutter-width / 2 max-content $gutter-width / 4 max-content;
+
+		&__label {
+			display: block;
+		}
+	}
+}

@@ -1,7 +1,8 @@
 .panel {
+	align-content: center;
 	align-items: center;
 	display: grid;
-	grid-auto-flow: column dense;
+	grid-auto-flow: row dense;
 	grid-column-gap: $gutter-width;
 	grid-template-areas: 'phones dwarf-menu profile customer';
 	grid-template-columns: repeat(4, auto);
@@ -54,6 +55,8 @@
 	}
 
 	&__customer {
+		align-items: center;
+		display: flex;
 		grid-area: customer;
 	}
 }

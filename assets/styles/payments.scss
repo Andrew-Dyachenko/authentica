@@ -1,0 +1,101 @@
+.payments {
+	$max-grid-column-gap: $gutter-width;
+	$min-grid-column-gap: $gutter-width / 100 * 75;
+	align-content: flex-start;
+	align-items: center;
+	display: grid;
+	grid-auto-flow: column;
+	grid-column-gap: $min-grid-column-gap;
+	grid-row-gap: $gutter-width / 2;
+	grid-template-areas:
+		'mir        visa'
+		'mastercard jcb';
+	grid-template-columns: repeat(2, max-content);
+	grid-template-rows: repeat(2, max-content);
+
+	&__link {
+		display: block;
+		line-height: 1;
+	}
+
+	&__item {
+		filter: grayscale(100%);
+
+		&--mir {
+			$font-size-max: 20px;
+			$font-size-min: 16px;
+			font-size: (strip-unit($font-size-min) / 15) + rem;
+			grid-area: mir;
+
+			@media (min-width: $xxs) {
+				font-size: fluid($font-size-min, $font-size-max, $xxs, $l);
+			}
+
+			@media (min-width: $l) {
+				font-size: (strip-unit($font-size-max) / 15) + rem;
+			}
+		}
+
+		&--visa {
+			$font-size-max: 20px;
+			$font-size-min: 16px;
+			font-size: (strip-unit($font-size-min) / 15) + rem;
+			grid-area: visa;
+
+			@media (min-width: $xxs) {
+				font-size: fluid($font-size-min, $font-size-max, $xxs, $l);
+			}
+
+			@media (min-width: $l) {
+				font-size: (strip-unit($font-size-max) / 15) + rem;
+			}
+		}
+
+		&--mastercard {
+			$font-size-max: 50px;
+			$font-size-min: 40px;
+			font-size: (strip-unit($font-size-min) / 15) + rem;
+			grid-area: mastercard;
+
+			@media (min-width: $xxs) {
+				font-size: fluid($font-size-min, $font-size-max, $xxs, $l);
+			}
+
+			@media (min-width: $l) {
+				font-size: (strip-unit($font-size-max) / 15) + rem;
+			}
+		}
+
+		&--jcb {
+			$font-size-max: 50px;
+			$font-size-min: 40px;
+			font-size: (strip-unit($font-size-min) / 15) + rem;
+			grid-area: jcb;
+
+			@media (min-width: $xxs) {
+				font-size: fluid($font-size-min, $font-size-max, $xxs, $l);
+			}
+
+			@media (min-width: $l) {
+				font-size: (strip-unit($font-size-max) / 15) + rem;
+			}
+		}
+
+		&:hover,
+		&:active {
+			filter: grayscale(0);
+		}
+	}
+
+	&__icon {
+		vertical-align: top;
+	}
+
+	@media (min-width: $xxs) {
+		grid-column-gap: fluid($min-grid-column-gap, $max-grid-column-gap, $xxs, $l);
+	}
+
+	@media (min-width: $l) {
+		grid-column-gap: $max-grid-column-gap;
+	}
+}
