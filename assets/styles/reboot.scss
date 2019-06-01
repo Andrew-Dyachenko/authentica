@@ -24,4 +24,16 @@ h4,
 h5,
 h6 {
 	margin-top: 0;
+
+	.icon {
+		font-size: (17 / 25) + em;
+	}
+}
+
+h1 {
+	font-size: (25 / 15) + rem;
+	font-weight: 400;
+	letter-spacing: 2px;
+	line-height: (30 / 25);
+	margin-top: (5 / 25) + em;
 }

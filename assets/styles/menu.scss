@@ -5,7 +5,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		padding: $gutter-width / 100 * 75 / 2 0;
+		padding: $gutter-width - $gutter-width / 100 * 75 / 2 0;
 
 		&:not(:empty) {
 			margin: 0 $gutter-width / 100 * 75 / -2;

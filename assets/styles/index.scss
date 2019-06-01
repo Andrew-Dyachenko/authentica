@@ -13,12 +13,14 @@
 @import '~bootstrap/scss/_mixins';
 @import '~bootstrap/scss/_buttons';
 @import '~bootstrap/scss/_dropdown';
+@import '~bootstrap/scss/_breadcrumb';
 
 /* stylelint-enable scss/at-import-no-partial-leading-underscore */
 
 @import './reboot';
 @import './prototypes';
 @import './container';
+@import './breadcrumb';
 @import './panel';
 @import './header';
 @import './logo';
@@ -47,4 +49,8 @@
 	&__icon {
 		height: (10 / 15) + em;
 	}
+}
+
+.redical-red {
+	color: $radical-red;
 }
