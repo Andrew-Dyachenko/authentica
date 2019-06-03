@@ -31,9 +31,17 @@ h6 {
 }
 
 h1 {
+	color: $radical-red;
 	font-size: (25 / 15) + rem;
 	font-weight: 400;
 	letter-spacing: 2px;
 	line-height: (30 / 25);
+	margin-bottom: 1em;
 	margin-top: (5 / 25) + em;
+}
+
+p {
+	font-size: 1rem;
+	margin-bottom: 1em;
+	margin-top: .5em;
 }

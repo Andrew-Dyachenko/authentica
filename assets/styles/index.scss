@@ -14,12 +14,14 @@
 @import '~bootstrap/scss/_buttons';
 @import '~bootstrap/scss/_dropdown';
 @import '~bootstrap/scss/_breadcrumb';
+@import '~bootstrap/scss/_popover';
 
 /* stylelint-enable scss/at-import-no-partial-leading-underscore */
 
 @import './reboot';
 @import './prototypes';
 @import './container';
+@import './popover';
 @import './breadcrumb';
 @import './panel';
 @import './header';
@@ -33,6 +35,8 @@
 @import './socials';
 @import './payments';
 @import './subscribe';
+@import './banner';
+@import './article';
 @import './footer';
 
 .menu-toggle {
@@ -51,6 +55,16 @@
 	}
 }
 
-.redical-red {
-	color: $radical-red;
+.show-for-l {
+	@media (max-width: $l - 1) {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
 }

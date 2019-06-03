@@ -6,7 +6,6 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Блог</title>
 		<link rel="stylesheet" href="./assets/styles/index.scss">
-		<script defer src="./node_modules/svgxuse/svgxuse.js"></script>
 		<script src="./index.js"></script>
 	</head>
 	<body>
@@ -143,9 +142,79 @@
 						<li class="breadcrumb-item breadcrumb__item active breadcrumb__item--active" aria-current="page">Мультитональное окрашивание Color.Me, Kevin.Murphy</li>
 					</ol>
 				</nav>
-				<h1 class="redical-red">
-					<i>МУЛЬТИТОНАЛЬНОЕ ОКРАШИВАНИЕ COLOR.ME,<br> KEVIN.MURPHY</i> <svg class="icon icon-heart--hollowed"><use xlink:href="./assets/images/symbol-defs.svg#icon-heart--hollowed"></use></svg>
-				</h1>
+				<article class="article">
+					<h1 class="article__title">
+						<i>МУЛЬТИТОНАЛЬНОЕ ОКРАШИВАНИЕ COLOR.ME,<br class="show-for-l"> KEVIN.MURPHY <svg class="icon icon-heart--hollowed"><use xlink:href="./assets/images/symbol-defs.svg#icon-heart--hollowed"></use></svg></i>
+						<time class="article__datetime" datetime="2016-05-13 15:00">13 мая 2016</time>
+					</h1>
+					<p>
+						Говорят, что новый краситель Kevin.Murphy имитирует мультитональность натурального цвета и<br class="show-for-l"> проникает в волосы, почти не повреждая кутикулу. Разобрались, почему это возможно.
+					</p>
+					<section class="banner" id="banner">
+						<div class="banner__former"></div>
+						<div class="banner__filler">
+							<div class="banner__media">
+								<img src="./assets/images/banner.png" alt="Banner" class="banner__image">
+							</div>
+							<div
+								class="popover-pointer banner__popover-pointer banner__popover-pointer--nail"
+								data-toggle="popover"
+								data-placement="right"
+								data-animation="false"
+								data-template="
+									<div class='popover popover--custom' role='tooltip'>
+										<div class='arrow'></div>
+										<h3 class='popover-header'></h3>
+										<div class='popover-body'></div>
+									</div>
+								"
+								data-content="
+									<div class='popover-container'>
+										<div class='popover__title'>
+											<a href='#' class='popover__link'>
+												Cult&amp;Smith
+											</a>
+										</div>
+										<div class='popover__about'>
+											Лак для ногтей<br> &laquo;Сладкая<br> зависимость&raquo;
+										</div>
+										<div class='popover__price'>
+											1890 руб.
+										</div>
+									</div>
+								">
+							</div>
+							<div
+								class="popover-pointer banner__popover-pointer banner__popover-pointer--lips"
+								data-toggle="popover"
+								data-placement="bottom"
+								data-animation="false"
+								data-template="
+									<div class='popover popover--custom' role='tooltip'>
+										<div class='arrow'></div>
+										<h3 class='popover-header'></h3>
+										<div class='popover-body'></div>
+									</div>
+								"
+								data-content="
+									<div class='popover-container'>
+										<div class='popover__title'>
+											<a href='#' class='popover__link'>
+												Cult&amp;Smith
+											</a>
+										</div>
+										<div class='popover__about'>
+											Лак для ногтей<br> &laquo;Сладкая<br> зависимость&raquo;
+										</div>
+										<div class='popover__price'>
+											1890 руб.
+										</div>
+									</div>
+								">
+							</div>
+						</div>
+					</section>
+				</article>
 			</main>
 		</div>
 		<div class="container container--footer">

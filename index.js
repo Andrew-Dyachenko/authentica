@@ -1,5 +1,9 @@
+import jQuery from 'jquery'
+import 'svgxuse'
 import './assets/js/array.from.polyfill'
+// import 'bootstrap/dist/js/bootstrap.bundle'
 import 'bootstrap/js/dist/dropdown'
+import 'bootstrap/js/dist/popover'
 
 /**
  * Добавляет недостоющую высоту блоку .container--main в случае если
@@ -49,4 +53,9 @@ const subscribeHandler = e => {
 document.addEventListener('DOMContentLoaded', () => {
 	footerToBottom()
 	document.getElementsByName('subscribe-form')[0].onsubmit = subscribeHandler
+	jQuery('[data-toggle="popover"]').popover({
+		container: jQuery('#banner'),
+		html: true
+	})
+	jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show')
 })

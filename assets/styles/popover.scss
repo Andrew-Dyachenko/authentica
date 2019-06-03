@@ -1,0 +1,70 @@
+.popover {
+	$popover: &;
+
+	&-pointer {
+		background-color: $white;
+		border: 5px solid $black;
+		border-radius: 50%;
+		cursor: pointer;
+		height: 20px;
+		width: 20px;
+	}
+
+	&--custom {
+		border-color: $white;
+		border-radius: 0;
+		box-shadow: 0 2px 4px $dusty-gray;
+		min-width: 150px;
+
+		#{$popover} {
+			&-body {
+				padding: $global-padding / 2 $global-padding / 2 + 2;
+			}
+
+			&-container {
+				display: grid;
+				grid-auto-flow: column;
+				grid-auto-rows: minmax($gutter-width / 4, max-content);
+				grid-template-areas:
+					'popover__title'
+					'popover__about'
+					'.'
+					'popover__price';
+			}
+		}
+	}
+
+	&__title {
+		color: $black;
+		font-size: (14 / 15) + rem;
+		font-weight: 300;
+		grid-area: popover__title;
+		line-height: 1;
+	}
+
+	&__link {
+		color: $sandal;
+		text-decoration: none;
+
+		&:visited {
+			color: $sandal;
+		}
+	}
+
+	&__about {
+		color: $black;
+		font-size: (14 / 15) + rem;
+		font-weight: 300;
+		grid-area: popover__about;
+		line-height: (17 / 14);
+	}
+
+	&__price {
+		color: $black;
+		font-size: (14 / 15) + rem;
+		font-weight: 500;
+		grid-area: popover__price;
+		grid-row: 4;
+		line-height: (17 / 14);
+	}
+}

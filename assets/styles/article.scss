@@ -1,0 +1,22 @@
+.article {
+	$article: &;
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+
+		#{$article} {
+			&__datetime {
+				align-self: flex-end;
+				letter-spacing: normal;
+			}
+		}
+	}
+
+	&__datetime {
+		color: $dusty-gray;
+		display: block;
+		font-size: (12 / 15) + rem;
+		text-align: right;
+	}
+}
