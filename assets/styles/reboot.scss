@@ -7,6 +7,11 @@
 
 * {
 	box-sizing: border-box;
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
 }
 
 body {
@@ -31,17 +36,104 @@ h6 {
 }
 
 h1 {
+	@include text-crop($line-height: 30 / 25);
 	color: $radical-red;
 	font-size: (25 / 15) + rem;
 	font-weight: 400;
 	letter-spacing: 2px;
-	line-height: (30 / 25);
+	margin-bottom: .5em;
+	margin-top: 1.75em;
+}
+
+h2 {
+	@include text-crop($line-height: 24 / 20);
+	color: $black;
+	font-size: (20 / 15) + rem;
+	font-weight: 400;
+	letter-spacing: 2px;
 	margin-bottom: 1em;
-	margin-top: (5 / 25) + em;
+	margin-top: 1.75em;
 }
 
 p {
+	@include text-crop();
 	font-size: 1rem;
 	margin-bottom: 1em;
-	margin-top: .5em;
+	margin-top: 1em;
+}
+
+blockquote {
+	margin: $global-margin * 1.5;
+	position: relative;
+
+	.icon {
+		position: absolute;
+
+		&-quotes {
+			color: $radical-red;
+			left: -26px;
+			top: -13px;
+		}
+	}
+}
+
+hr {
+	background-color: $dusty-gray;
+	border: 0;
+	height: 1px;
+	margin: $global-margin * 1.5 / 2 0;
+
+	// + h1,
+	// + h2,
+	// + h3 {
+	// 	margin-top: 1em;
+	// }
+}
+
+a {
+	text-decoration: none;
+}
+
+ol {
+	counter-reset: section;
+	list-style: none;
+	margin: $global-margin 0;
+	padding-left: 23px;
+
+	li {
+		position: relative;
+
+		&::before {
+			align-items: center;
+			border: 1px solid $dusty-gray;
+			border-radius: 10px;
+			color: $dusty-gray;
+			content: counter(section);
+			counter-increment: section;
+			display: flex;
+			font-size: 12px;
+			height: 20px;
+			justify-content: center;
+			left: 0;
+			line-height: 1;
+			margin-left: $global-margin / -4;
+			min-width: 20px;
+			padding-left: .1em;
+			padding-top: .2em;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			transform: translateX(calc(-100%));
+		}
+
+		+ li {
+			margin-top: 8px;
+		}
+	}
+}
+
+.big {
+	font-size: (25 / 15) + em;
+	font-weight: 400;
+	letter-spacing: 2px;
 }

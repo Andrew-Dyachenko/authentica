@@ -33,9 +33,11 @@
 @import './menu';
 @import './links-group';
 @import './socials';
+
 @import './payments';
 @import './subscribe';
 @import './banner';
+@import './mention';
 @import './article';
 @import './footer';
 
@@ -55,7 +57,7 @@
 	}
 }
 
-.show-for-l {
+.show-for-l:not(br) {
 	@media (max-width: $l - 1) {
 		border: 0;
 		clip: rect(0 0 0 0);
@@ -66,5 +68,27 @@
 		position: absolute;
 		white-space: nowrap;
 		width: 1px;
+	}
+}
+
+br.show-for-l { /* stylelint-disable-line selector-no-qualifying-type */
+	@media (max-width: $l - 1) {
+		display: none;
+	}
+}
+
+.radical-red {
+	color: $radical-red;
+
+	&:visited {
+		color: $radical-red;
+	}
+}
+
+.dusty-gray {
+	color: $dusty-gray;
+
+	&:visited {
+		color: $dusty-gray;
 	}
 }
