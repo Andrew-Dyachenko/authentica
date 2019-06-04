@@ -33,10 +33,6 @@
 	}
 
 	li {
-		&::before {
-			display: none;
-		}
-
 		+ li {
 			margin-top: 0;
 		}

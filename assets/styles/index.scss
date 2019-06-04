@@ -18,6 +18,8 @@
 
 /* stylelint-enable scss/at-import-no-partial-leading-underscore */
 
+@import '~slick-carousel/slick/slick';
+
 @import './reboot';
 @import './prototypes';
 @import './container';
@@ -27,18 +29,19 @@
 @import './header';
 @import './logo';
 @import './phones';
+@import './postcard';
 @import './customer';
 @import './dwarf-menu';
 @import './dropdown';
 @import './menu';
 @import './links-group';
 @import './socials';
-
 @import './payments';
 @import './subscribe';
 @import './banner';
 @import './mention';
 @import './article';
+@import './lean-slider';
 @import './footer';
 
 .menu-toggle {
@@ -90,5 +93,13 @@ br.show-for-l { /* stylelint-disable-line selector-no-qualifying-type */
 
 	&:visited {
 		color: $dusty-gray;
+	}
+}
+
+.emperor {
+	color: $emperor;
+
+	&:visited {
+		color: $emperor;
 	}
 }

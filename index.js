@@ -1,4 +1,5 @@
 import jQuery from 'jquery'
+import 'slick-carousel'
 import 'svgxuse'
 import './assets/js/array.from.polyfill'
 // import 'bootstrap/dist/js/bootstrap.bundle'
@@ -58,4 +59,37 @@ document.addEventListener('DOMContentLoaded', () => {
 		html: true
 	})
 	jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show')
+	jQuery('.lean-slider__container').each(function () {
+		const slider = jQuery(this)
+		const actions = slider.parent('.lean-slider').find('.lean-slider__actions').eq(0)
+		const prevArrow = actions.find('.lean-slider__action--previous').eq(0)
+		const nextArrow = actions.find('.lean-slider__action--forward').eq(0)
+		const scoreboard = slider.parent('.lean-slider').find('.lean-slider__scoreboard').eq(0)
+		const scoreboardCurrent = scoreboard.find('.lean-slider__scoreboard-current').eq(0)
+		const scoreboardTotal = scoreboard.find('.lean-slider__scoreboard-total').eq(0)
+
+		slider.on('init', (event, slick) => {
+			const { currentSlide, slideCount } = slick
+			scoreboardCurrent.text(currentSlide + 1)
+			scoreboardTotal.text(slideCount)
+		})
+
+		slider.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+			scoreboardCurrent.text(nextSlide + 1)
+		})
+
+		slider.on('afterChange', (event, slick, currentSlide) => {
+			scoreboardCurrent.text(currentSlide + 1)
+		})
+
+		slider.slick({
+			lazyLoad: 'progressive',
+			appendArrows: actions,
+			prevArrow,
+			nextArrow,
+			infinite: false,
+			centerMode: true,
+			centerPadding: 0
+		})
+	})
 })

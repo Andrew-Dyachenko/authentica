@@ -1,8 +1,7 @@
 .article {
 	$article: &;
 	display: grid;
-	grid-auto-flow: column dense;
-	grid-column-gap: $gutter-width;
+	grid-auto-flow: row;
 	grid-template-areas:
 		'article__forehead'
 		'.'
@@ -12,8 +11,9 @@
 		'.'
 		'article__aside'
 		'.'
-		'article__footer   article__footer';
-
+		'article__footer';
+	grid-template-columns: 100%;
+	grid-template-rows: max-content 24px max-content 20px max-content 20px max-content 20px max-content;
 
 	&__forehead {
 		grid-area: article__forehead;
@@ -30,13 +30,36 @@
 	&__main {
 		grid-area: article__main;
 
-		> *:first-child {
-			margin-top: 0;
+		> * {
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
 	&__aside {
+		display: grid;
 		grid-area: article__aside;
+		grid-auto-flow: row;
+		grid-column-gap: $gutter-width;
+		grid-row-gap: $gutter-width;
+		grid-template-columns: 1fr;
+
+		@media (min-width: $s) {
+			grid-auto-flow: column;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (min-width: $l) {
+			align-content: flex-start;
+			grid-auto-flow: row;
+			grid-row-gap: $gutter-width * 2;
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__footer {
@@ -67,7 +90,23 @@
 		text-align: right;
 	}
 
+	&__poster {
+		display: block;
+		margin: $global-margin 0;
+		max-width: 100%;
+	}
+
+	&__lean-slider {
+		width: 100%;
+
+		@media (min-width: $s) {
+			margin-right: $global-margin;
+			max-width: 320px;
+		}
+	}
+
 	@media (min-width: $l) {
+		grid-column-gap: $gutter-width;
 		grid-template-areas:
 			'article__forehead article__forehead'
 			'.                 .'
@@ -77,7 +116,6 @@
 			'.                 .'
 			'article__footer   article__footer';
 
-		grid-template-columns: 1fr 320px;
-		grid-template-rows: max-content 24px max-content 20px max-content 20px max-content;
+		grid-template-columns: 66% 32%;
 	}
 }

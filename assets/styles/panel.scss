@@ -36,6 +36,9 @@
 					border-bottom-color: $black;
 					border-top-color: $black;
 					border-width: (7.68 / 14) + em (4.5 / 14) + em;
+					position: relative;
+					top: (1 / -14) + em;
+					vertical-align: middle;
 				}
 
 				&:hover,

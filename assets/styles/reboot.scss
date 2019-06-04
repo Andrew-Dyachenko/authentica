@@ -94,7 +94,7 @@ a {
 	text-decoration: none;
 }
 
-ol {
+ol:not(.breadcrumb) {
 	counter-reset: section;
 	list-style: none;
 	margin: $global-margin 0;
