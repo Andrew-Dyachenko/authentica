@@ -1,21 +1,13 @@
-.mentions {
-	display: grid;
-	grid-auto-flow: row;
-	grid-gap: $gutter-width;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
 .mention {
 	display: grid;
-	grid-auto-flow: row dense;
+	grid-auto-flow: row;
 	grid-column-gap: $gutter-width;
 	grid-row-gap: $gutter-width / 100 * 75;
 	grid-template-areas:
-		'mention__media mention__infoblock'
-		'mention__text  mention__text';
-	grid-template-columns: repeat(2, 1fr);
+		'mention__media'
+		'mention__infoblock'
+		'mention__text';
+	grid-template-rows: repeat(3, max-content);
 
 	&__media {
 		grid-area: mention__media;
@@ -63,6 +55,7 @@
 
 	&__info {
 		color: $black;
+		display: none;
 		font-size: (12 / 15) + rem;
 		font-weight: 400;
 		line-height: (15 / 12);
@@ -81,5 +74,14 @@
 		font-size: (12 / 15) + rem;
 		grid-area: mention__text;
 		line-height: (15 / 12);
+	}
+
+	@media (min-width: $xxs) {
+		grid-auto-flow: column;
+		grid-template-areas:
+			'mention__media mention__infoblock'
+			'mention__text  mention__text';
+		grid-template-columns: 50% 50%;
+		grid-template-rows: repeat(2, max-content);
 	}
 }

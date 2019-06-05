@@ -51,14 +51,32 @@ const subscribeHandler = e => {
 	}
 }
 
+const bannerPopovers = () => {
+	const f = () => {
+		if (window.innerWidth >= 600) {
+			jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show')
+		}
+		else {
+			jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('hide')
+		}
+	}
+
+	window.addEventListener('resize', () => {
+		f()
+	})
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	footerToBottom()
+	bannerPopovers()
 	document.getElementsByName('subscribe-form')[0].onsubmit = subscribeHandler
 	jQuery('[data-toggle="popover"]').popover({
 		container: jQuery('#banner'),
 		html: true
 	})
-	jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show')
+
+
+
 	jQuery('.lean-slider__container').each(function () {
 		const slider = jQuery(this)
 		const actions = slider.parent('.lean-slider').find('.lean-slider__actions').eq(0)

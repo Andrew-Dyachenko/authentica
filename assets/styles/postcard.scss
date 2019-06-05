@@ -2,30 +2,11 @@
 	display: grid;
 	grid-auto-flow: row;
 	grid-row-gap: $gutter-width;
-
-	&__media {
-		overflow: hidden;
-		position: relative;
-
-		&-former {
-			padding-top: (395 / 320) * 100%;
-		}
-
-		&-filler {
-			align-items: center;
-			bottom: 0;
-			display: flex;
-			justify-content: center;
-			left: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-	}
+	grid-template-rows: repeat(2, max-content);
+	margin: 0;
 
 	&__image {
 		display: block;
-		height: 100%;
 		margin: 0 auto;
 		object-fit: cover;
 		width: 100%;

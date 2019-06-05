@@ -103,3 +103,15 @@ br.show-for-l { /* stylelint-disable-line selector-no-qualifying-type */
 		color: $emperor;
 	}
 }
+
+.sandal {
+	color: $sandal;
+
+	&:visited {
+		color: $sandal;
+	}
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

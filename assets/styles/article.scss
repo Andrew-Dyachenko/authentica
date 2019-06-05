@@ -1,19 +1,27 @@
 .article {
 	$article: &;
 	display: grid;
-	grid-auto-flow: row;
 	grid-template-areas:
-		'article__forehead'
-		'.'
-		'article__banner'
-		'.'
-		'article__main'
-		'.'
-		'article__aside'
-		'.'
-		'article__footer';
-	grid-template-columns: 100%;
-	grid-template-rows: max-content 24px max-content 20px max-content 20px max-content 20px max-content;
+		'article__forehead article__forehead'
+		'.                 .'
+		'article__banner   article__banner'
+		'.                 .'
+		'article__aside    article__aside'
+		'.                 .'
+		'article__main     article__main'
+		'.                 .'
+		'article__footer   article__footer';
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows:
+		max-content
+		$gutter-width + 4
+		max-content
+		$gutter-width
+		max-content
+		$gutter-width
+		max-content
+		$gutter-width
+		max-content;
 
 	&__forehead {
 		grid-area: article__forehead;
@@ -50,8 +58,12 @@
 		grid-template-columns: 1fr;
 
 		@media (min-width: $s) {
-			grid-auto-flow: column;
+			grid-auto-flow: row dense;
 			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (min-width: $m) {
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 
 		@media (min-width: $l) {
@@ -90,18 +102,38 @@
 		text-align: right;
 	}
 
-	&__poster {
-		display: block;
-		margin: $global-margin 0;
-		max-width: 100%;
+	&__postcard {
+		width: 100%;
 	}
 
 	&__lean-slider {
+		margin-bottom: 20px;
 		width: 100%;
 
 		@media (min-width: $s) {
 			margin-right: $global-margin;
 			max-width: 320px;
+		}
+	}
+
+	&__mention {
+		@media (min-width: $s) {
+			grid-auto-flow: row;
+			grid-template-areas:
+				'mention__media'
+				'mention__infoblock'
+				'mention__text';
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, max-content);
+		}
+
+		@media (min-width: $l) {
+			grid-auto-flow: column;
+			grid-template-areas:
+				'mention__media mention__infoblock'
+				'mention__text  mention__text';
+			grid-template-columns: 50% 50%;
+			grid-template-rows: repeat(2, max-content);
 		}
 	}
 
