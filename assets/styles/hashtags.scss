@@ -1,0 +1,21 @@
+.hashtags {
+	display: grid;
+	grid-column-gap: $gutter-width;
+	grid-row-gap: $gutter-width * .75;
+	grid-template-columns: repeat(auto-fill, 120px);
+	justify-content: flex-start;
+
+	&__link {
+		@include text-crop($line-height: 1.2);
+		color: $dusty-gray;
+		display: inline-block;
+		max-width: 100%;
+		min-width: min-content;
+		vertical-align: top;
+
+		&:hover,
+		&:active {
+			color: $radical-red;
+		}
+	}
+}
