@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "./node_modules/parcel-bundler/bin/cli.js index.html",
+		"build": "./node_modules/parcel-bundler/bin/cli.js build index.html",
 		"watch": "./node_modules/parcel-bundler/bin/cli.js watch index.html",
 		"scss-fix": "./node_modules/stylelint/bin/stylelint.js --config ./.stylelintrc.yml --fix ./**/*.scss --ignore-path .stylelintignore",
 		"js-fix": "./node_modules/eslint/bin/eslint.js --config ./.eslintrc.yml --fix ./**/*.js --ignore-path .gitignore"
