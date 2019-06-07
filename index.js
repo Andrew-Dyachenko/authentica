@@ -58,6 +58,14 @@ const purchaseHandler = e => {
 	button.setAttribute('disabled', true)
 }
 
+const liftMeUpHandler = e => {
+	e.stopPropagation()
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	})
+}
+
 const bannerPopovers = () => {
 	const f = () => {
 		if (window.innerWidth >= 600) {
@@ -94,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 	bannerPopovers()
 	toggleCardFavorites()
+
+	document.querySelector('.liftMeUp').addEventListener('click', liftMeUpHandler)
 
 	const purchaseBottons = document.querySelectorAll('.card__action--purchase')
 	Array.from(purchaseBottons).forEach(button => button.addEventListener('click', purchaseHandler))
