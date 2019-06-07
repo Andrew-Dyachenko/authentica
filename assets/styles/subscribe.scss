@@ -26,6 +26,8 @@
 		grid-area: subscribe__submit;
 
 		&-text {
+			@include text-crop($line-height: 17 / 14);
+
 			&--l {
 				display: none;
 			}
@@ -51,6 +53,10 @@
 
 		&--error {
 			color: $radical-red;
+		}
+
+		&:empty {
+			display: none;
 		}
 	}
 

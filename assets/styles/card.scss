@@ -1,0 +1,156 @@
+.card {
+	background-color: $white;
+	display: grid;
+	grid-auto-flow: row;
+	grid-row-gap: $gutter-width / 2;
+	grid-template-columns: 100%;
+	padding: 15px 20px;
+	width: 190px;
+
+	&__media {
+		position: relative;
+
+		&-former {
+			padding-top: (235 / 150) * 100%;
+		}
+
+		&-filler {
+			align-items: center;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			left: 0;
+			overflow: hidden;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		&-link {
+			display: block;
+			position: relative;
+		}
+	}
+
+	&__fastview {
+		bottom: 0;
+		position: absolute;
+		right: 0;
+
+		&:hover,
+		&:active {
+			width: 100%;
+		}
+
+		@media (max-width: $l - 1) {
+			display: none;
+		}
+	}
+
+	&__image {
+		display: block;
+		margin: 0 auto;
+		object-fit: cover;
+	}
+
+	&__body {
+		display: grid;
+		grid-auto-rows: row;
+		grid-row-gap: $gutter-width / 2;
+		grid-template-columns: 100%;
+		&:empty {
+			display: none;
+		}
+	}
+
+	/* stylelint-disable property-no-vendor-prefix, vendor-no-vendor-prefix, value-no-vendor-prefix */
+
+	&__name {
+		margin: 0;
+
+		&-link {
+			@include text-crop($line-height: 17 / 14);
+			color: $sandal;
+			display: inline-block;
+			font-size: (14 / 15) + rem;
+			font-weight: 300;
+			max-height: 2em;
+			max-width: 100%;
+			overflow: hidden;
+			vertical-align: top;
+		}
+	}
+
+	&__description {
+		// @include text-crop($line-height: 17 / 14);
+		color: $black;
+		font-size: (14 / 15) + rem;
+		font-weight: 300;
+		line-height: (17 / 14);
+		margin: 0;
+		max-height: (17 / 14) * 5em;
+		overflow: hidden;
+	}
+
+	/* stylelint-enable property-no-vendor-prefix, vendor-no-vendor-prefix, value-no-vendor-prefix */
+
+	&__properties {
+		display: grid;
+		grid-auto-flow: row;
+		grid-row-gap: $gutter-width / 4;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__property {
+		@include text-crop($line-height: 15 / 12);
+		color: $dusty-gray;
+		font-size: (12 / 15) + rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__actions {
+		display: grid;
+		grid-auto-flow: column dense;
+		grid-gap: $gutter-width / 4;
+		grid-template-columns: 1fr max-content;
+		justify-content: space-between;
+	}
+
+	&__action {
+		$action: &;
+
+		&--purchase {
+			width: 100%;
+		}
+
+		&--favorite {
+			--fill: transparent;
+			--stroke: $radical-red;
+			$favorite: &;
+			font-size: 1rem;
+			min-width: 33px;
+
+			&:hover,
+			&:active,
+			&#{$action}--active {
+				--fill: $white;
+				--stroke: $white;
+				background-color: $radical-red;
+				border-color: $radical-red;
+				color: $white;
+			}
+
+			.icon {
+				pointer-events: none;
+			}
+		}
+	}
+
+	&:hover {
+		box-shadow: 0 1px 5px $dusty-gray;
+	}
+}

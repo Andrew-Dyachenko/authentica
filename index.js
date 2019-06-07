@@ -61,21 +61,32 @@ const bannerPopovers = () => {
 		}
 	}
 
+	f()
+
 	window.addEventListener('resize', () => {
 		f()
 	})
 }
 
+const toggleCardFavorites = () => {
+	const favorites = document.querySelectorAll('.card__action--favorite')
+	Array.from(favorites).forEach(faborite => {
+		faborite.addEventListener('click', e => {
+			e.stopPropagation()
+			e.target.classList.toggle('card__action--active')
+		})
+	})
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	footerToBottom()
-	bannerPopovers()
 	document.getElementsByName('subscribe-form')[0].onsubmit = subscribeHandler
 	jQuery('[data-toggle="popover"]').popover({
 		container: jQuery('#banner'),
 		html: true
 	})
-
-
+	bannerPopovers()
+	toggleCardFavorites()
 
 	jQuery('.lean-slider__container').each(function () {
 		const slider = jQuery(this)
@@ -108,6 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
 			infinite: false,
 			centerMode: true,
 			centerPadding: 0
+		})
+	})
+
+	jQuery('.goods-slider__container').each(function () {
+		const slider = jQuery(this)
+		const prevArrow = slider.parent().find('.goods-slider__action--previous').eq(0)
+		const nextArrow = slider.parent().find('.goods-slider__action--forward').eq(0)
+		slider.slick({
+			lazyLoad: 'progressive',
+			prevArrow,
+			nextArrow,
+			infinite: false,
+			slidesToShow: 3,
+			responsive: [{
+				breakpoint: 1039,
+					settings: {
+						slidesToShow: 4,
+					}
+				},
+				{
+					breakpoint: 200 * 4 + 25 * 2 + 20 * 2, // 890
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 200 * 3 + 25 * 2 + 20 * 2, // 690
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 200 * 2 + 25 * 2 + 20 * 2, // 490
+					settings: {
+						slidesToShow: 1
+					}
+				},
+				{
+					breakpoint: 200 * 1 + 25 * 2 + 20 * 2, // 290
+					settings: 'unslick' // destroys slick
+				}
+			]
 		})
 	})
 })

@@ -1,7 +1,7 @@
 @mixin text-crop($line-height: $global-line-height, $top-adjustment: 0, $bottom-adjustment: 0) {
 	// Configured in Step 1
-	$top-crop: 4;
-	$bottom-crop: 7;
+	$top-crop: 5;
+	$bottom-crop: 8;
 	$crop-font-size: $font-size-root;
 	$crop-line-height: $global-line-height;
 
