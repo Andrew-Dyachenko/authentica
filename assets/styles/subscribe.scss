@@ -26,7 +26,7 @@
 		grid-area: subscribe__submit;
 
 		&-text {
-			@include text-crop($line-height: 17 / 14);
+			@include text-crop($line-height: 17 / 14, $top-adjustment: 0, $bottom-adjustment: 1px);
 
 			&--l {
 				display: none;
