@@ -87,12 +87,6 @@ hr {
 	border: 0;
 	height: 1px;
 	margin: $global-margin * 1.5 / 2 0;
-
-	// + h1,
-	// + h2,
-	// + h3 {
-	// 	margin-top: 1em;
-	// }
 }
 
 a {
@@ -134,6 +128,34 @@ ol:not(.breadcrumb) {
 		+ li {
 			margin-top: 8px;
 		}
+	}
+
+	&.squared { /* stylelint-disable-line selector-no-qualifying-type */
+		li {
+			&::before {
+				border: 0;
+				border-radius: 0;
+				color: $emperor;
+				content: '[' counter(section) ']';
+				display: inline-flex;
+				font-size: 1em;
+				height: auto;
+				left: auto;
+				line-height: 1;
+				margin: 0;
+				min-width: auto;
+				padding: 0;
+				position: static;
+				top: auto;
+				transform: none;
+				transform: translateY((1 / -15 + em));
+				vertical-align: text-bottom;
+			}
+		}
+	}
+
+	&.inset { /* stylelint-disable-line */
+		padding-left: 0;
 	}
 }
 

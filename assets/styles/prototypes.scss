@@ -39,7 +39,7 @@
 	}
 
 	&__text-crop {
-		@include text-crop($line-height: 17 / 14);
+		@include text-crop($line-height: 17 / 14, $top-adjustment: 0, $bottom-adjustment: 1px);
 		display: inline-block;
 		vertical-align: middle;
 	}

@@ -66,29 +66,29 @@
 	/* stylelint-disable property-no-vendor-prefix, vendor-no-vendor-prefix, value-no-vendor-prefix */
 
 	&__name {
+		@include text-crop($line-height: 17 / 14);
+		color: $sandal;
+		font-size: (14 / 15) + rem;
+		font-weight: 300;
+		height: 1em;
 		margin: 0;
+		overflow: hidden;
 
 		&-link {
-			@include text-crop($line-height: 17 / 14);
 			color: $sandal;
-			display: inline-block;
 			font-size: (14 / 15) + rem;
 			font-weight: 300;
-			max-height: 2em;
-			max-width: 100%;
-			overflow: hidden;
-			vertical-align: top;
 		}
 	}
 
 	&__description {
-		// @include text-crop($line-height: 17 / 14);
+		@include text-crop($line-height: 17 / 14);
 		color: $black;
 		font-size: (14 / 15) + rem;
 		font-weight: 300;
-		line-height: (17 / 14);
+		height: (17 / 14) * 5em;
+		height: calc(#{(17 / 14) * 5em} - #{(3 / 14) + em});
 		margin: 0;
-		max-height: (17 / 14) * 5em;
 		overflow: hidden;
 	}
 
