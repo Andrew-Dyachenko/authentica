@@ -84,6 +84,8 @@
 		}
 
 		@media (min-width: $l) {
+			grid-gap: $gutter-width / 2;
+
 			.socials__item {
 				font-size: (20 / 15) + rem;
 			}
