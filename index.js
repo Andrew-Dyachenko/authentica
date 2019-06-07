@@ -51,6 +51,13 @@ const subscribeHandler = e => {
 	}
 }
 
+const purchaseHandler = e => {
+	e.stopPropagation()
+	const button = e.target
+	button.querySelector('span').innerText = 'В КОРЗИНЕ!'
+	button.setAttribute('disabled', true)
+}
+
 const bannerPopovers = () => {
 	const f = () => {
 		if (window.innerWidth >= 600) {
@@ -87,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 	bannerPopovers()
 	toggleCardFavorites()
+
+	const purchaseBottons = document.querySelectorAll('.card__action--purchase')
+	Array.from(purchaseBottons).forEach(button => button.addEventListener('click', purchaseHandler))
 
 	jQuery('.lean-slider__container').each(function () {
 		const slider = jQuery(this)
