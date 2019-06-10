@@ -2,8 +2,8 @@
 	$popover: &;
 
 	&-pointer {
-		background-color: $black;
-		border: 5px solid $white;
+		background-color: $white;
+		border: 5px solid $black;
 		border-radius: 50%;
 		cursor: pointer;
 		height: 20px;
@@ -11,8 +11,8 @@
 		width: 20px;
 
 		&[aria-describedby] {
-			background-color: $white;
-			border-color: $black;
+			background-color: $black;
+			border-color: $white;
 		}
 	}
 

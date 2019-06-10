@@ -94,7 +94,9 @@
 
 	&__text {
 		@include text-crop();
+		font-weight: 300;
 		grid-area: review__text;
+		margin: 0;
 	}
 
 	@media (min-width: $xxs) {

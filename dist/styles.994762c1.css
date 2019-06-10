@@ -1560,6 +1560,7 @@ p::after {
 }
 
 blockquote {
+  font-weight: 300;
   margin: 30px;
   position: relative;
 }
@@ -1590,6 +1591,7 @@ ol:not(.breadcrumb) {
   padding-left: 23px;
 }
 ol:not(.breadcrumb) li {
+  font-weight: 300;
   position: relative;
 }
 ol:not(.breadcrumb) li::before {
@@ -1914,8 +1916,8 @@ ol:not(.breadcrumb).inset {
 }
 
 .popover-pointer {
-  background-color: #000;
-  border: 5px solid #fff;
+  background-color: #fff;
+  border: 5px solid #000;
   border-radius: 50%;
   cursor: pointer;
   height: 20px;
@@ -1923,8 +1925,8 @@ ol:not(.breadcrumb).inset {
   width: 20px;
 }
 .popover-pointer[aria-describedby] {
-  background-color: #fff;
-  border-color: #000;
+  background-color: #000;
+  border-color: #fff;
 }
 .popover--custom {
   border-color: #fff;
@@ -3529,7 +3531,9 @@ _:-ms-input-placeholder .socials__item:last-child,
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   line-height: 1.5333333333;
+  font-weight: 300;
   grid-area: review__text;
+  margin: 0;
 }
 .review__text::before, .review__text::after {
   content: "";
