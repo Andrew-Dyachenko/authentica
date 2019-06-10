@@ -35,15 +35,28 @@
 
 	&__fastview {
 		bottom: 0;
-		opacity: 0;
-		pointer-events: none;
+		letter-spacing: normal;
 		position: absolute;
 		right: 0;
-		visibility: hidden;
+		text-align: center;
+
+		.button__text-crop {
+			display: inline-block;
+			overflow: hidden;
+			padding: 0;
+			text-align: center;
+			white-space: nowrap;
+			width: 0;
+		}
 
 		&:hover,
 		&:active {
 			width: 100%;
+
+			.button__text-crop {
+				flex-grow: 1;
+				padding: 0 $global-padding / 4;
+			}
 		}
 
 		@media (max-width: $l - 1) {
@@ -78,10 +91,20 @@
 		margin: 0;
 		overflow: hidden;
 
+		&:hover,
+		&:active {
+			color: $radical-red;
+		}
+
 		&-link {
 			color: $sandal;
 			font-size: (14 / 15) + rem;
 			font-weight: 300;
+
+			&:hover,
+			&:active {
+				color: $radical-red;
+			}
 		}
 	}
 
