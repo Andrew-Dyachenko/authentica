@@ -1940,18 +1940,13 @@ ol:not(.breadcrumb).inset {
 .popover--custom .popover-container {
   display: -ms-grid;
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-rows: minmax(5px, -webkit-max-content);
-  grid-auto-rows: minmax(5px, max-content);
-  grid-template-areas: "popover__title" "popover__about" "." "popover__price";
+  grid-auto-flow: row;
+  grid-row-gap: 5px;
 }
 .popover__title {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   color: #000;
   font-size: 0.9333333333rem;
   font-weight: 300;
-  grid-area: popover__title;
   line-height: 1;
 }
 .popover__link {
@@ -1962,23 +1957,15 @@ ol:not(.breadcrumb).inset {
   color: #a68e6f;
 }
 .popover__about {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   color: #000;
   font-size: 0.9333333333rem;
   font-weight: 300;
-  grid-area: popover__about;
   line-height: 1.2142857143;
 }
 .popover__price {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
   color: #000;
   font-size: 0.9333333333rem;
   font-weight: 500;
-  grid-area: popover__price;
-  -ms-grid-row: 4;
-  grid-row: 4;
   line-height: 1.2142857143;
 }
 
