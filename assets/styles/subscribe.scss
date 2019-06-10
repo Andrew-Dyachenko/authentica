@@ -13,7 +13,8 @@
 	&__label {
 		color: $chicago;
 		display: none;
-		font-size: (14 / 15) + rem;
+		font-size: 1rem;
+		font-weight: 300;
 		grid-area: subscribe__label;
 		margin-bottom: 0;
 	}

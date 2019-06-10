@@ -53,6 +53,7 @@
 	&__email {
 		color: $dusty-gray;
 		font-style: normal;
+		font-weight: 300;
 		text-decoration: none;
 
 		&:visited {
@@ -100,7 +101,7 @@
 		.phones__item,
 		.phones__link {
 			color: $emperor;
-			font-weight: 400;
+			font-weight: 300;
 			letter-spacing: 2px;
 		}
 

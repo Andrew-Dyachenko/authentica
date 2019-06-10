@@ -41,10 +41,6 @@
 		right: 0;
 		visibility: hidden;
 
-		.button__text {
-			@include text-crop($line-height: 15 / 12, $top-adjustment: 0, $bottom-adjustment: 1px);
-		}
-
 		&:hover,
 		&:active {
 			width: 100%;
@@ -136,24 +132,29 @@
 		}
 
 		&--favorite {
-			--fill: transparent;
-			--stroke: $radical-red;
 			$favorite: &;
 			font-size: 1rem;
 			min-width: 33px;
+			stroke-width: 1;
 
 			&:hover,
 			&:active,
 			&#{$action}--active {
-				--fill: $white;
-				--stroke: $white;
-				background-color: $radical-red;
+				background-color: $white;
 				border-color: $radical-red;
-				color: $white;
+				color: $radical-red;
+
+				.icon {
+					fill: #{$radical-red};
+					stroke: #{$radical-red};
+				}
 			}
 
 			.icon {
+				fill: #{$white};
 				pointer-events: none;
+				stroke: #{$radical-red};
+				stroke-width: 3;
 			}
 		}
 	}
