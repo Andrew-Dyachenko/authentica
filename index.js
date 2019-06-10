@@ -2,7 +2,6 @@ import jQuery from 'jquery'
 import 'slick-carousel'
 import 'svgxuse'
 import './assets/js/array.from.polyfill'
-// import 'bootstrap/dist/js/bootstrap.bundle'
 import 'bootstrap/js/dist/dropdown'
 import 'bootstrap/js/dist/popover'
 
@@ -66,21 +65,21 @@ const liftMeUpHandler = e => {
 	})
 }
 
-const bannerPopovers = () => {
+const leftMeUp = () => {
+	const liftMeUp = document.querySelector('.liftMeUp')
+	liftMeUp.addEventListener('click', liftMeUpHandler)
+
 	const f = () => {
-		if (window.innerWidth >= 600) {
-			jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show')
+		if(window.scrollY) {
+			liftMeUp.classList.add('liftMeUp--visible')
 		}
 		else {
-			jQuery('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('hide')
+			liftMeUp.classList.remove('liftMeUp--visible')
 		}
 	}
 
 	f()
-
-	window.addEventListener('resize', () => {
-		f()
-	})
+	window.addEventListener('scroll', f)
 }
 
 const toggleCardFavorites = () => {
@@ -96,14 +95,14 @@ const toggleCardFavorites = () => {
 document.addEventListener('DOMContentLoaded', () => {
 	footerToBottom()
 	document.getElementsByName('subscribe-form')[0].onsubmit = subscribeHandler
+
 	jQuery('[data-toggle="popover"]').popover({
 		container: jQuery('#banner'),
 		html: true
 	})
-	bannerPopovers()
-	toggleCardFavorites()
 
-	document.querySelector('.liftMeUp').addEventListener('click', liftMeUpHandler)
+	toggleCardFavorites()
+	leftMeUp()
 
 	const purchaseBottons = document.querySelectorAll('.card__action--purchase')
 	Array.from(purchaseBottons).forEach(button => button.addEventListener('click', purchaseHandler))

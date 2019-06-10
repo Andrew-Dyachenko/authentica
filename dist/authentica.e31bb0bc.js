@@ -18836,8 +18836,6 @@ require("bootstrap/js/dist/popover");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import 'bootstrap/dist/js/bootstrap.bundle'
-
 /**
  * Добавляет недостоющую высоту блоку .container--main в случае если
  * недостаточная высота контента и footer не был прижат к низу.
@@ -18895,19 +18893,20 @@ var liftMeUpHandler = function liftMeUpHandler(e) {
   });
 };
 
-var bannerPopovers = function bannerPopovers() {
+var leftMeUp = function leftMeUp() {
+  var liftMeUp = document.querySelector('.liftMeUp');
+  liftMeUp.addEventListener('click', liftMeUpHandler);
+
   var f = function f() {
-    if (window.innerWidth >= 600) {
-      (0, _jquery.default)('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('show');
+    if (window.scrollY) {
+      liftMeUp.classList.add('liftMeUp--visible');
     } else {
-      (0, _jquery.default)('.banner__popover-pointer--nail, .banner__popover-pointer--lips').popover('hide');
+      liftMeUp.classList.remove('liftMeUp--visible');
     }
   };
 
   f();
-  window.addEventListener('resize', function () {
-    f();
-  });
+  window.addEventListener('scroll', f);
 };
 
 var toggleCardFavorites = function toggleCardFavorites() {
@@ -18927,9 +18926,8 @@ document.addEventListener('DOMContentLoaded', function () {
     container: (0, _jquery.default)('#banner'),
     html: true
   });
-  bannerPopovers();
   toggleCardFavorites();
-  document.querySelector('.liftMeUp').addEventListener('click', liftMeUpHandler);
+  leftMeUp();
   var purchaseBottons = document.querySelectorAll('.card__action--purchase');
   Array.from(purchaseBottons).forEach(function (button) {
     return button.addEventListener('click', purchaseHandler);
@@ -19034,7 +19032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39731" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46359" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

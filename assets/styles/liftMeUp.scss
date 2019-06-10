@@ -4,6 +4,7 @@
 	border-radius: 50%;
 	bottom: 15px;
 	cursor: pointer;
+	display: none;
 	// display: none;
 	height: 43px;
 	margin: 0;
@@ -11,6 +12,10 @@
 	position: fixed;
 	right: 15px;
 	width: 43px;
+
+	&--visible {
+		display: block;
+	}
 
 	&::before {
 		border-bottom: 20px solid $radical-red;

@@ -33,6 +33,7 @@
 	text-align: center;
 
 	&__text {
+		@include text-crop($line-height: 17 / 14, $top-adjustment: 0, $bottom-adjustment: 1px);
 		flex-grow: 1;
 		overflow: hidden;
 		text-align: center;

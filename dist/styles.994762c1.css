@@ -1542,6 +1542,7 @@ h2.custom-title {
 p {
   line-height: 1.5333333333;
   font-size: 1rem;
+  font-weight: 300;
   margin-bottom: 1em;
   margin-top: 1em;
 }
@@ -1690,10 +1691,23 @@ ol:not(.breadcrumb).inset {
   margin-top: calc(-0.3738095238em);
 }
 .button__text {
+  line-height: 1.2142857143;
   -ms-flex-positive: 1;
   flex-grow: 1;
   overflow: hidden;
   text-align: center;
+}
+.button__text::before, .button__text::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+}
+.button__text::before {
+  margin-bottom: calc(-0.1071428571em);
+}
+.button__text::after {
+  margin-top: calc(-0.3738095238em + 1px);
 }
 .button__text-crop {
   line-height: 1.2142857143;
@@ -1887,7 +1901,8 @@ ol:not(.breadcrumb).inset {
 
 .dropdown.show .dropdown-toggle::after {
   border-bottom: 0.5485714286em solid #000;
-  border-top-width: 0;
+  border-top-width: 0 !important;
+  /* stylelint-disable-line declaration-no-important */
 }
 .dropdown-header {
   padding: 1em;
@@ -1899,12 +1914,17 @@ ol:not(.breadcrumb).inset {
 }
 
 .popover-pointer {
-  background-color: #fff;
-  border: 5px solid #000;
+  background-color: #000;
+  border: 5px solid #fff;
   border-radius: 50%;
   cursor: pointer;
   height: 20px;
+  padding: 0;
   width: 20px;
+}
+.popover-pointer[aria-describedby] {
+  background-color: #fff;
+  border-color: #000;
 }
 .popover--custom {
   border-color: #fff;
@@ -2184,8 +2204,10 @@ _:-ms-input-placeholder .links-group__item:last-child,
 }
 .panel__profile .btn.panel__profile-toggle::after {
   border-bottom-color: #000;
+  border-left-width: 0.3214285714em;
+  border-right-width: 0.3214285714em;
   border-top-color: #000;
-  border-width: 0.5485714286em 0.3214285714em;
+  border-top-width: 0.5485714286em;
   position: relative;
   top: -0.0714285714em;
   vertical-align: middle;
@@ -2803,8 +2825,26 @@ _:-ms-input-placeholder .socials__item:last-child,
 }
 .card__fastview {
   bottom: 0;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
   right: 0;
+  visibility: hidden;
+}
+.card__fastview .button__text {
+  line-height: 1.25;
+}
+.card__fastview .button__text::before, .card__fastview .button__text::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+}
+.card__fastview .button__text::before {
+  margin-bottom: calc(-0.125em);
+}
+.card__fastview .button__text::after {
+  margin-top: calc(-0.3916666667em + 1px);
 }
 .card__fastview:hover, .card__fastview:active {
   width: 100%;
@@ -2940,6 +2980,18 @@ _:-ms-input-placeholder .socials__item:last-child,
 }
 .card:hover {
   box-shadow: 0 1px 5px #989797;
+}
+@media (hover: hover) {
+  .card__actions {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .card:hover .card__actions {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
 }
 
 .goods-slider {
@@ -3998,12 +4050,16 @@ _:-ms-input-placeholder .socials__item:last-child,
   border-radius: 50%;
   bottom: 15px;
   cursor: pointer;
+  display: none;
   height: 43px;
   margin: 0;
   padding: 0;
   position: fixed;
   right: 15px;
   width: 43px;
+}
+.liftMeUp--visible {
+  display: block;
 }
 .liftMeUp::before {
   border-bottom: 20px solid #fe4a5b;
@@ -4074,6 +4130,7 @@ _:-ms-input-placeholder .socials__item:last-child,
 }
 .footer__email {
   color: #989797;
+  font-style: normal;
   text-decoration: none;
 }
 .footer__email:visited {

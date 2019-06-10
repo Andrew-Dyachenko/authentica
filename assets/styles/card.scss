@@ -1,4 +1,5 @@
 .card {
+	$card: &;
 	background-color: $white;
 	display: grid;
 	grid-auto-flow: row;
@@ -34,8 +35,15 @@
 
 	&__fastview {
 		bottom: 0;
+		opacity: 0;
+		pointer-events: none;
 		position: absolute;
 		right: 0;
+		visibility: hidden;
+
+		.button__text {
+			@include text-crop($line-height: 15 / 12, $top-adjustment: 0, $bottom-adjustment: 1px);
+		}
 
 		&:hover,
 		&:active {
@@ -152,5 +160,22 @@
 
 	&:hover {
 		box-shadow: 0 1px 5px $dusty-gray;
+	}
+
+	@media (hover: hover) {
+		&__actions {
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
+		}
+		&:hover {
+			.#{card} {
+				&__actions {
+					opacity: 1;
+					pointer-events: auto;
+					visibility: visible;
+				}
+			}
+		}
 	}
 }
