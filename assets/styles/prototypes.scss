@@ -72,7 +72,7 @@
 
 		.#{button} {
 			&__text-crop {
-				@include text-crop($line-height: 15 / 12, $top-adjustment: 0, $bottom-adjustment: 2px);
+				@include text-crop($line-height: 15 / 12, $top-adjustment: 0, $bottom-adjustment: 1px);
 			}
 		}
 	}
