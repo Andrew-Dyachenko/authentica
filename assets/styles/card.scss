@@ -41,12 +41,17 @@
 		text-align: center;
 
 		.button__text-crop {
-			display: inline-block;
+			line-height: (15 / 12) + em;
 			overflow: hidden;
 			padding: 0;
 			text-align: center;
 			white-space: nowrap;
 			width: 0;
+
+			&::before,
+			&::after {
+				display: none;
+			}
 		}
 
 		&:hover,
