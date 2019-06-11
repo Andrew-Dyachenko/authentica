@@ -1,21 +1,18 @@
 .hashtags {
-	display: grid;
-	grid-column-gap: $gutter-width;
-	grid-row-gap: $gutter-width * .75;
-	grid-template-columns: repeat(auto-fill, 120px);
-	justify-content: flex-start;
-
 	&__link {
-		@include text-crop($line-height: 1.2);
+		@include text-crop($line-height: 1.2, $top-adjustment: 1px);
 		color: $dusty-gray;
-		display: inline-block;
-		max-width: 100%;
-		min-width: min-content;
-		vertical-align: top;
+		float: left;
+		font-size: 1rem;
+		margin: $global-margin / 4 $global-margin / 2;
 
 		&:hover,
 		&:active {
 			color: $radical-red;
 		}
+	}
+
+	&:not(:empty) {
+		margin: $global-margin / -4 $global-margin / -2;
 	}
 }
