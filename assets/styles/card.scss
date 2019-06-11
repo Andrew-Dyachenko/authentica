@@ -41,7 +41,7 @@
 		text-align: center;
 
 		.button__text-crop {
-			line-height: (15 / 12) + em;
+			@include text-crop($line-height: (15 / 12));
 			overflow: hidden;
 			padding: 0;
 			text-align: center;
@@ -136,7 +136,7 @@
 	}
 
 	&__property {
-		@include text-crop($line-height: 15 / 12);
+		@include text-crop($line-height: 15 / 12, $top-adjustment: 0, $bottom-adjustment: 2px);
 		color: $dusty-gray;
 		font-size: (12 / 15) + rem;
 		overflow: hidden;
@@ -192,14 +192,16 @@
 	}
 
 	@media (hover: hover) {
-		&__actions {
+		&__actions,
+		&__fastview {
 			opacity: 0;
 			pointer-events: none;
 			visibility: hidden;
 		}
 		&:hover {
 			.#{card} {
-				&__actions {
+				&__actions,
+				&__fastview {
 					opacity: 1;
 					pointer-events: auto;
 					visibility: visible;

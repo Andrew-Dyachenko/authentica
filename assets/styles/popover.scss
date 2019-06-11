@@ -46,8 +46,18 @@
 		color: $sandal;
 		text-decoration: none;
 
+		&:hover,
+		&:active {
+			color: $radical-red;
+		}
+
 		&:visited {
 			color: $sandal;
+
+			&:hover,
+			&:active {
+				color: $radical-red;
+			}
 		}
 	}
 
